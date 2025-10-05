@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Coconut Business Design System - Natural & Export-Ready */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Natural Color Palette */
+    --background: 38 12% 97%;
+    --foreground: 25 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Coconut Natural Colors */
+    --primary: 120 40% 25%;
+    --primary-foreground: 0 0% 98%;
+    
+    --coconut-green: 120 35% 30%;
+    --coconut-brown: 25 45% 35%;
+    --coconut-cream: 38 25% 92%;
+    --nature-green: 140 50% 20%;
+
+    --secondary: 38 25% 92%;
+    --secondary-foreground: 25 30% 15%;
+
+    --muted: 38 15% 94%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: 120 25% 85%;
+    --accent-foreground: 25 30% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 38 20% 88%;
+    --input: 38 20% 88%;
+    --ring: 120 40% 25%;
+
+    /* Natural Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(120 40% 25%), hsl(140 50% 20%));
+    --gradient-coconut: linear-gradient(180deg, hsl(25 45% 35%), hsl(25 55% 45%));
+    --gradient-nature: linear-gradient(90deg, hsl(120 35% 30%), hsl(140 40% 25%));
+    --gradient-cream: linear-gradient(135deg, hsl(38 25% 92%), hsl(0 0% 98%));
+
+    /* Shadows & Effects */
+    --shadow-natural: 0 10px 30px -10px hsl(120 40% 25% / 0.2);
+    --shadow-coconut: 0 8px 25px -8px hsl(25 45% 35% / 0.15);
+    --shadow-glow: 0 0 40px hsl(120 35% 30% / 0.1);
+
+    /* Animations */
+    --transition-natural: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-quick: all 0.2s ease-out;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 30% 8%;
+    --foreground: 38 25% 92%;
+
+    --card: 25 25% 12%;
+    --card-foreground: 38 25% 92%;
+
+    --popover: 25 25% 12%;
+    --popover-foreground: 38 25% 92%;
+
+    --primary: 120 35% 70%;
+    --primary-foreground: 25 30% 8%;
+
+    --coconut-green: 120 30% 65%;
+    --coconut-brown: 25 40% 60%;
+    --coconut-cream: 38 20% 85%;
+    --nature-green: 140 45% 60%;
+
+    --secondary: 25 20% 20%;
+    --secondary-foreground: 38 25% 92%;
+
+    --muted: 25 15% 18%;
+    --muted-foreground: 38 15% 65%;
+
+    --accent: 120 20% 25%;
+    --accent-foreground: 38 25% 92%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 38 25% 92%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 120 35% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .coconut-gradient {
+    background: var(--gradient-coconut);
+  }
+  
+  .nature-gradient {
+    background: var(--gradient-nature);
+  }
+  
+  .cream-gradient {
+    background: var(--gradient-cream);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
