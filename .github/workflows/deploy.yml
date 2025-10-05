@@ -33,7 +33,7 @@ jobs:
         run: |
           if [ -f cocohub/package.json ]; then
             echo "workdir=cocohub" >> "$GITHUB_OUTPUT"
-            echo "dist_path=stockfinancehub/dist" >> "$GITHUB_OUTPUT"
+            echo "dist_path=cocohub/dist" >> "$GITHUB_OUTPUT"
           else
             echo "workdir=." >> "$GITHUB_OUTPUT"
             echo "dist_path=dist" >> "$GITHUB_OUTPUT"
@@ -44,8 +44,7 @@ jobs:
         working-directory: ${{ steps.where.outputs.workdir }}
 
       - name: Build
-        run: |
-          npm run build
+        run: npm run build
         working-directory: ${{ steps.where.outputs.workdir }}
 
       - name: Copy 404.html for SPA fallback
