@@ -54,6 +54,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # ✅ make sure it uploads the cocohub/dist directory (includes 404.html)
           path: ${{ steps.where.outputs.dist_path }}
 
   deploy:
