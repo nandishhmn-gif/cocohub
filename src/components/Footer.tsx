@@ -12,11 +12,16 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <img src="/src/assets/cocohub-logo.jpg" alt="Cocohub Logo" className="h-12 w-auto" />
+              <img
+                src="/src/assets/cocohub-logo.jpg"
+                alt="Cocohub Logo"
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="text-sm text-primary-foreground/80">
-              From Nature to Nurture - Premium coconut products and export solutions 
-              across South India. Your trusted partner for eco-friendly coconut products.
+              From Nature to Nurture - Premium coconut products and export
+              solutions across South India. Your trusted partner for
+              eco-friendly coconut products.
             </p>
             <div className="flex space-x-4">
               <a
@@ -33,25 +38,39 @@ const Footer = () => {
 
           {/* Products */}
           <div className="space-y-4">
-            <h3 className="font-playfair font-semibold text-lg">Our Products</h3>
+            <h3 className="font-playfair font-semibold text-lg">
+              Our Products
+            </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/products#cocopeat" className="text-primary-foreground/80 hover:text-white transition-colors">
+                <Link
+                  to="/products#cocopeat"
+                  className="text-primary-foreground/80 hover:text-white transition-colors"
+                >
                   Cocopeat for Agriculture
                 </Link>
               </li>
               <li>
-                <Link to="/products#coco-power" className="text-primary-foreground/80 hover:text-white transition-colors">
+                <Link
+                  to="/products#coco-power"
+                  className="text-primary-foreground/80 hover:text-white transition-colors"
+                >
                   Coco Power Products
                 </Link>
               </li>
               <li>
-                <Link to="/products#fresh-coconuts" className="text-primary-foreground/80 hover:text-white transition-colors">
+                <Link
+                  to="/products#fresh-coconuts"
+                  className="text-primary-foreground/80 hover:text-white transition-colors"
+                >
                   Thunder Fresh Coconuts
                 </Link>
               </li>
               <li>
-                <Link to="/products#bulk-trading" className="text-primary-foreground/80 hover:text-white transition-colors">
+                <Link
+                  to="/products#bulk-trading"
+                  className="text-primary-foreground/80 hover:text-white transition-colors"
+                >
                   Bulk Coconut Trading
                 </Link>
               </li>
@@ -60,7 +79,9 @@ const Footer = () => {
 
           {/* Service Areas */}
           <div className="space-y-4">
-            <h3 className="font-playfair font-semibold text-lg">Service Areas</h3>
+            <h3 className="font-playfair font-semibold text-lg">
+              Service Areas
+            </h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>Karnataka</li>
               <li>Tamil Nadu</li>
@@ -80,16 +101,24 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Phone className="w-4 h-4 mt-0.5 text-primary-foreground/80" />
                 <div>
-                  <a href="tel:+916363784290" className="text-primary-foreground/80 hover:text-white transition-colors">
+                  <a
+                    href="tel:+916363784290"
+                    className="text-primary-foreground/80 hover:text-white transition-colors"
+                  >
                     +91 6363 784290
                   </a>
-                  <p className="text-primary-foreground/80">Owner: Nandish HM</p>
+                  <p className="text-primary-foreground/80">
+                    Owner: Nandish HM
+                  </p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <Mail className="w-4 h-4 mt-0.5 text-primary-foreground/80" />
                 <div>
-                  <a href="mailto:contact.cocohub@gmail.com" className="text-primary-foreground/80 hover:text-white transition-colors">
+                  <a
+                    href="mailto:contact.cocohub@gmail.com"
+                    className="text-primary-foreground/80 hover:text-white transition-colors"
+                  >
                     contact.cocohub@gmail.com
                   </a>
                 </div>
@@ -97,8 +126,10 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary-foreground/80" />
                 <p className="text-primary-foreground/80">
-                  Pattanagere Main Road<br />
-                  Rajarajeshwari Nagar<br />
+                  Pattanagere Main Road
+                  <br />
+                  Rajarajeshwari Nagar
+                  <br />
                   Bengaluru - 560098
                 </p>
               </div>
@@ -115,13 +146,22 @@ const Footer = () => {
               © {currentYear} Cocohub. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <Link to="/privacy" className="text-primary-foreground/80 hover:text-white transition-colors">
+              <Link
+                to="/privacy"
+                className="text-primary-foreground/80 hover:text-white transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-primary-foreground/80 hover:text-white transition-colors">
+              <Link
+                to="/terms"
+                className="text-primary-foreground/80 hover:text-white transition-colors"
+              >
                 Terms of Service
               </Link>
-              <Link to="/sitemap" className="text-primary-foreground/80 hover:text-white transition-colors">
+              <Link
+                to="/sitemap"
+                className="text-primary-foreground/80 hover:text-white transition-colors"
+              >
                 Sitemap
               </Link>
             </div>

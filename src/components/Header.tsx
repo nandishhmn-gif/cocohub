@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import logo from "@/assets/cocohub-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +24,7 @@ const Header = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <img src="/src/assets/cocohub-logo.png" alt="Cocohub Logo" className="h-10 w-auto" />
+          <img src={logo} alt="Cocohub Logo" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -46,12 +47,20 @@ const Header = () => {
         {/* Desktop CTA Buttons */}
         <div className="hidden md:flex items-center space-x-4">
           <a href="tel:+916363784290">
-            <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            >
               <Phone className="w-4 h-4 mr-2" />
               Call Now
             </Button>
           </a>
-          <a href="https://wa.me/916363784290?text=Hello%20Cocohub!%20I%27d%20like%20to%20get%20a%20quote%20for%20your%20coconut%20products." target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://wa.me/916363784290?text=Hello%20Cocohub!%20I%27d%20like%20to%20get%20a%20quote%20for%20your%20coconut%20products."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button variant="default" size="sm" className="hero-gradient">
               <MessageCircle className="w-4 h-4 mr-2" />
               Get Quote
@@ -91,13 +100,26 @@ const Header = () => {
             ))}
             <div className="mt-4 space-y-2">
               <a href="tel:+916363784290" className="block">
-                <Button variant="outline" size="sm" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                >
                   <Phone className="w-4 h-4 mr-2" />
                   Call Now
                 </Button>
               </a>
-              <a href="https://wa.me/916363784290?text=Hello%20Cocohub!%20I%27d%20like%20to%20get%20a%20quote%20for%20your%20coconut%20products." target="_blank" rel="noopener noreferrer" className="block">
-                <Button variant="default" size="sm" className="w-full hero-gradient">
+              <a
+                href="https://wa.me/916363784290?text=Hello%20Cocohub!%20I%27d%20like%20to%20get%20a%20quote%20for%20your%20coconut%20products."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Button
+                  variant="default"
+                  size="sm"
+                  className="w-full hero-gradient"
+                >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   Get Quote
                 </Button>
