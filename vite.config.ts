@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
   },
   // When deploying to GitHub Pages under a repo (e.g. https://<user>.github.io/cocohub/)
   // set the base to the repo name for production builds. During development keep '/'.
-  base: mode === "development" ? "/" : "/",
+  base: mode === "development" ? "/" : "/cocohub/",
   plugins: [react()],
   resolve: {
     alias: {
