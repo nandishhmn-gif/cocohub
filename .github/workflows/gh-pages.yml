@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages (via gh-pages branch)
+name: Deploy to GitHub Pages (docs folder)
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-deploy:
-    name: Build and deploy to gh-pages
+    name: Build and commit docs
     runs-on: ubuntu-latest
 
     steps:
@@ -41,12 +41,10 @@ jobs:
             echo "${{ secrets.CUSTOM_DOMAIN }}" > dist/CNAME
           fi
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
-          # optional: set the committer name/email for the push
-          user_name: github-actions[bot]
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+      - name: Commit docs directory
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs
+          git commit -m "chore: update built files" || echo "No changes to commit"
+          git push
