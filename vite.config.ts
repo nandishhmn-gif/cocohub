@@ -8,7 +8,11 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: true,
   },
+  // When deploying to GitHub Pages under a repo (e.g. https://<user>.github.io/cocohub/)
+  // set the base to the repo name for production builds. During development keep '/'.
+  base: mode === "development" ? "/" : "/",
   plugins: [react()],
   resolve: {
     alias: {
