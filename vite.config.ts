@@ -13,9 +13,9 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "docs", // Output to docs folder for GitHub Pages
   },
-  // When deploying to GitHub Pages under a repo (e.g. https://<user>.github.io/cocohub/)
-  // set the base to the repo name for production builds. During development keep '/'.
-  base: mode === "development" ? "/" : "/cocohub/",
+  // When using a custom domain, we use '/' as the base
+  // because the site is served from the root of the domain
+  base: "/",
   plugins: [react()],
   resolve: {
     alias: {
