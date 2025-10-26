@@ -1,57 +1,55 @@
-name: Deploy to GitHub Pages (docs folder)
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main, master]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
-  build-and-deploy:
-    name: Build and commit docs
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # Gives the workflow permission to push to the repository
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: 20
+          cache: npm
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm ci
 
       - name: Build
         run: npm run build
 
-      - name: Prepare CNAME for custom domain (if provided)
+      - name: Copy 404.html for SPA fallback
         run: |
-          set -e
-          mkdir -p dist
-          # If repository has a CNAME file at the repo root, copy it into the build output
-          if [ -f CNAME ]; then
-            echo "Found repo-root CNAME; copying to dist/CNAME"
-            cp CNAME dist/CNAME
-          fi
-          # If a secret CUSTOM_DOMAIN is provided and no repo CNAME exists, write it
-          if [ -n "${{ secrets.CUSTOM_DOMAIN }}" ] && [ ! -f dist/CNAME ]; then
-            echo "Writing custom domain from secret CUSTOM_DOMAIN to dist/CNAME"
-            echo "${{ secrets.CUSTOM_DOMAIN }}" > dist/CNAME
-          fi
+          cp dist/index.html dist/404.html
 
-      - name: Commit docs directory
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add -f docs  # Force add the docs directory
-          git commit -m "chore: update built files" || echo "No changes to commit"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
