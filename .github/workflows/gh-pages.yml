@@ -10,6 +10,8 @@ jobs:
   build-and-deploy:
     name: Build and commit docs
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Gives the workflow permission to push to the repository
 
     steps:
       - name: Checkout
@@ -43,8 +45,13 @@ jobs:
 
       - name: Commit docs directory
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -f docs  # Force add the docs directory
           git commit -m "chore: update built files" || echo "No changes to commit"
-          git push origin main
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
