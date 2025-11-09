@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* Coconut Business Design System - Natural & Export-Ready */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
 @layer base {
   :root {
@@ -20,7 +20,7 @@
     /* Coconut Natural Colors */
     --primary: 120 40% 25%;
     --primary-foreground: 0 0% 98%;
-    
+
     --coconut-green: 120 35% 30%;
     --coconut-brown: 25 45% 35%;
     --coconut-cream: 38 25% 92%;
@@ -43,9 +43,21 @@
     --ring: 120 40% 25%;
 
     /* Natural Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(120 40% 25%), hsl(140 50% 20%));
-    --gradient-coconut: linear-gradient(180deg, hsl(25 45% 35%), hsl(25 55% 45%));
-    --gradient-nature: linear-gradient(90deg, hsl(120 35% 30%), hsl(140 40% 25%));
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(120 40% 25%),
+      hsl(140 50% 20%)
+    );
+    --gradient-coconut: linear-gradient(
+      180deg,
+      hsl(25 45% 35%),
+      hsl(25 55% 45%)
+    );
+    --gradient-nature: linear-gradient(
+      90deg,
+      hsl(120 35% 30%),
+      hsl(140 40% 25%)
+    );
     --gradient-cream: linear-gradient(135deg, hsl(38 25% 92%), hsl(0 0% 98%));
 
     /* Shadows & Effects */
@@ -129,7 +141,12 @@
     @apply bg-background text-foreground font-inter antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-playfair;
   }
 }
@@ -138,34 +155,44 @@
   .hero-gradient {
     background: var(--gradient-hero);
   }
-  
+
   .coconut-gradient {
     background: var(--gradient-coconut);
   }
-  
+
   .nature-gradient {
     background: var(--gradient-nature);
   }
-  
+
   .cream-gradient {
     background: var(--gradient-cream);
   }
-  
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .animate-pulse-soft {
     animation: pulse-soft 3s ease-in-out infinite;
   }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes pulse-soft {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }

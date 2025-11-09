@@ -20,7 +20,7 @@ const Footer = () => {
             </Link>
             <p className="text-sm text-primary-foreground/80">
               From Nature to Nurture - Premium coconut products and export
-              solutions across South India. Your trusted partner for
+              solutions across Karnataka & Tamilnadu. Your trusted partner for
               eco-friendly coconut products.
             </p>
             <div className="flex space-x-4">
@@ -55,7 +55,7 @@ const Footer = () => {
                   to="/products#coco-power"
                   className="text-primary-foreground/80 hover:text-white transition-colors"
                 >
-                  Coco Power Products
+                  Coco Powder Products
                 </Link>
               </li>
               <li>
@@ -85,12 +85,6 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>Karnataka</li>
               <li>Tamil Nadu</li>
-              <li>Goa</li>
-              <li>Andhra Pradesh</li>
-              <li>Telangana</li>
-              <li>Chennai</li>
-              <li>Hyderabad</li>
-              <li>International Export</li>
             </ul>
           </div>
 
